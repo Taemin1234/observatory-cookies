@@ -77,14 +77,17 @@ function popup(){
         //popup이라는 이름의 쿠키 값이 none이라면
         $("#popup").hide();
         return
-    }
+    }   
+        // 창이 열리면 팝업창 뜨기
         $("#popup").show()
-        //팝업은 시작하자마자 보여주게...하고
-        //체크박스와 닫기버튼에 이벤트 걸기... 
+        
+        // 그냥 닫기
         $("#close-btn-area>span").click(function(){
             $("#popup").hide()
             //닫기버튼 클릭하면 팝업창 hide
         })
+    
+        // 1일 간 열지 않기
         $("#check-btn-1").click(function(){
             //alert("1일간 열지 않기 체크")
             $.cookie("popup", "no", {
@@ -93,6 +96,8 @@ function popup(){
             });
             $("#popup").hide()
         })
+    
+        // 7일 간 열지않기
         $("#check-btn-7").click(function(){
             //alert("7일간 열지 않기 체크")
             $.cookie("popup", "no", {
